@@ -1,18 +1,52 @@
 /*1. Atskiri elementai
     a. Tamsiai žaliai nuspalvinti h1 tagą;
+    */
+document.querySelector('#h1-color').style.backgroundColor = 'darkgreen';
+
+
+/*
     b. Tagui i pridėti klasę small;
     https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
-    c. Iš tago h1 pašalinti klasę main;
-    d. Tik tam h2 tagui, kuris iškart eina po h1 tago, pridėti klasę first ir pašalinti klasę main;
-    https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/remove
-    e. Pirmam span tagui, kuris yra h2 viduje sumažinti fonto dydį iki 10px ir nudažyti pilkai
 */
 
+const i = document.querySelector('i');
+    i.classList.add('small');
+/*
+    c. Iš tago h1 pašalinti klasę main;
+*/
+const h1 = document.querySelector('h1');
+    h1.classList.remove('main');
+/*
+    d. Tik tam h2 tagui, kuris iškart eina po h1 tago, pridėti klasę first ir pašalinti klasę main;
+    https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/remove
+*/
+const h2 = document.querySelector('h1 + h2');
+    h2.classList.add('first')
+    h2.classList.remove('main')
+
+/*
+    e. Pirmam span tagui, kuris yra h2 viduje sumažinti fonto dydį iki 10px ir nudažyti pilkai
+*/
+const span = document.querySelector('div h2 span');
+span.style.fontSize = '10px';
+span.style.color = 'blue';
 
 /* 2. Elemetų grupės (nodeList) skaičiavimus išvest į consolę
     a. Suskaičiuoti kiek yra h2 tagų;
+*/
+
+const listH2 = document.getElementsByTagName('h2');
+console.log(listH2.length);
+/*
     b. Suskaičiuoti kiek yra h2 tagų, kurie neturi klasės first
+*/
+const listH21 = document.querySelectorAll('.first').querySelectorAll('h2');
+console.log(listH21.length);
+/*
     c. Visus h2 tagus nuspalvinti šviesiai mėlynai
+*/
+const bluetext = document.querySelector('h2 [style="color:blue"]').innerText
+/*
     d. Tagų, kurie yra div su klase prices, viduje esantiems h2 tagams pridėti klasę price-tag;
     ePabraukti visus tagus su klase new;
     e. uskaičiuoti kiek yra gyvūnų kategorijų ir žirafų (jos yra ul tagai);
