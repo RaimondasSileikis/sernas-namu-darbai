@@ -1,13 +1,99 @@
 // 1. Sukurti text tipo input elementą ir mygtuką. Paspaudus mygtuką input elemente esantį tekstą išvesti į console.log 
+const body = document.querySelector('body')
+
+const input = document.createElement('input');
+input.setAttribute('type', 'text');
+input.setAttribute('id', 'irasas')
+
+const button = document.createElement('button');
+const mygtukas = document.createTextNode('Mygtukas')
+button.appendChild(mygtukas);
+
+document.body.appendChild(input);
+document.body.appendChild(button);
+
+const irasas = document.querySelector('#irasas');
+
+irasas.addEventListener('input', () => {
+    console.log(irasas.value);
+});
+
+button.addEventListener('click', () =>  {
+    console.log('Enter:' + irasas.value);
+});
 
 
-// 2. Sukurti select tipo elementą su trim reikšmėm “rytas”, “diena”, “vakaras”. Pasikeitus reikšmėm select elemente, naują reikšmę išvesti į console.log
+// 2. Sukurti select tipo elementą su trim reikšmėm “rytas”, “diena”, “vakaras”. Pasikeitus reikšmėm select elemente,
+// naują reikšmę išvesti į console.log
+
+const select = document.createElement('select');
+const option1 = document.createElement('option');
+option1.setAttribute('value', 'rytas');
+const option2 = document.createElement('option');
+option2.setAttribute('value', 'diena');
+const option3 = document.createElement('option');
+option3.setAttribute('value', 'vakaras');
+
+const rytas = document.createTextNode('rytas');
+const diena = document.createTextNode('diena');
+const vakaras = document.createTextNode('vakaras');
+
+option1.appendChild(rytas);
+option2.appendChild(diena);
+option3.appendChild(vakaras);
+
+select.appendChild(option1);
+select.appendChild(option2);
+select.appendChild(option3);
+
+document.body.appendChild(select);
 
 
-// 3. Sukurti tris radio tipo elementus su reikšmėm “rytas”, “diena”, “vakaras”. Pasikeitus reikšmėm radio elemente, naują reikšmę išvesti į console.log
+select.addEventListener('input', () => {
+    console.log('select: '  + select.value);
+});
+
+
+// 3. Sukurti tris radio tipo elementus su reikšmėm “rytas”, “diena”, “vakaras”. Pasikeitus reikšmėm radio elemente, 
+// naują reikšmę išvesti į console.log
+
+const fieldset = document.createElement('fieldset')
+
+const radio1 = document.createElement('input');
+radio1.setAttribute('type', 'radio')
+radio1.setAttribute('value', 'rytas')
+const radio2 = document.createElement('input');
+radio2.setAttribute('type', 'radio')
+radio2.setAttribute('value', 'diena')
+const radio3 = document.createElement('input');
+radio3.setAttribute('type', 'radio')
+radio3.setAttribute('value', 'vakaras')
+
+
+
+const rytas2 = document.createTextNode('rytas');
+const diena2 = document.createTextNode('diena');
+const vakaras2 = document.createTextNode('vakaras');
+
+radio1.appendChild(rytas2);
+radio2.appendChild(diena2);
+radio3.appendChild(vakaras2);
+
+
+fieldset.appendChild(radio1)
+fieldset.appendChild(radio2)
+fieldset.appendChild(radio3)
+
+document.body.appendChild(fieldset)
+
+fieldset.addEventListener('click', () => {
+    console.log('select: '  + fieldset.value);
+});
 
 
 // 4. Sukurti vieną checkbox tipo elementą. Pažyminėjus elementą išvesti i console.log pranešimą “pažymėta”, o nuėmus pažymėjimą- “nepažymėta”
+
+
 
 
 // 5. Sukurti tris checkbox tipo elementus su reikšmėm “rytas”, “diena”, “vakaras”. Pasikeitus kažkuriai checkbox elemento reikšmei (pažymint arba atžymint checkbox’ą), išvesti į console.log visų pažymėtų checkbox’ų reikšmes.
