@@ -69,3 +69,20 @@ console.log(Math.min(...maxGreiciuMasyvas));
 //vienas kilometras vienas ciklo prasisukimas. Cikle rand() funkciją atsitiktinai generuokite visų įvykių tikimybę. 
 //Jeigu viename cikle įvyksta visi nepalankūs įvykiai: iššoka kengūra, vairuotojas nespėja pasukti vairo ir nespėja paspausti
 // stabdžių while ciklą baikite. Ciklo pabaigoje atspausdinkite kiek kilometų sugebėjo nuvažiuoti automobilis be avarijos.
+
+
+let i = 0;
+let result = '';
+do {
+  
+   
+    
+    const ivykis1 = rand(0, 1);
+    const ivykis2 = rand(0, 1);
+    const ivykis3 = rand(0, 1);
+    sumIvykiu = ivykis1 + ivykis2 + ivykis3;
+    
+     
+} while (sumIvykiu != 0);
+i ++;
+console.log(i);
