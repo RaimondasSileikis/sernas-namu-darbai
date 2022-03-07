@@ -27,31 +27,28 @@ const bitCats = bitGirls.map(function (name, i) {
 console.log(bitCats);
 
 // 3. bitCats masyve suskaičiuokite kiek yra storų ir normalių katinukų.
-
-console.log(newBitCats);
-const count = [];
-
-for (const el of newBitCats) {
-  if (count[el]) {
-    count[el] += 1;
-  } else {
-    count[el] = 1;
+   
+    let sumN = 0;
+    let sumS = 0;
+  for (let i = 0; i < bitCats.length; i++) {
+      if (bitCats[i][1] === 'normalus') {
+      sumN += 1;  
+   }
+      if (bitCats[i][1] === 'storas') {
+     sumS += 1;
   }
 }
-
-console.log('Storu :', count['storas']);
-console.log('Normaliu :', count['normalus']);
-
-
-
-
-
+ 
+  console.log('Storu :', sumN);
+  console.log('Normaliu :', sumS);
 
 
 // 4. Išrūšiuokite gautą bitsCats masyvą pagal antrą katinuko vardo raidę, abėcėlės tvarka (ne pagal 
 //visą vardą, o tik pagal antrą raidę) Tokiu būdu katinukas vardu Rainius pagal antrą “a” raidę turėtų atsidurti viršuje.
 
-bitCats.sort((a, b) => {
+
+
+const newcats = bitCats.sort((a, b) => {
   a1 = a.substring(1, 2);
   b1 = b.substring(1, 2);
   if (a1 === b1) {
@@ -66,4 +63,3 @@ console.log(bitCats);
 
 // 5.  (BOSO lygis) Iš masyvų bitGirls ir bitCats padarykite masyvą happyCats, kurio elementai būtų masyvai iš mergaitės vardo 
 // ir katinuko vardo. Nausėdai katinuko neduokit (nes neužteks) ir Nausėdai vietoj katinuko priskirkite stringą “Barsukas”.
-
