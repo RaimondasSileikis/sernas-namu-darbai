@@ -19,12 +19,17 @@ console.log(bitGirls);
 // turėtų elementus iš mažų, dviejų narių, masyvų: pirmas narys katinuko vardas, 
 // antras - katinuko svoris - atsitiktinės tekstinės reikšmės - “storas” arba“normalus”.
 
-const bitCats = bitGirls.map(function (name, i) {
- 
-    const svoris = ['storas', 'normalus'];
-    return [name, svoris[Math.floor(Math.random() * svoris.length)]]; 
-});
+const bitCats = [];
+for (let i = 0; i < cats.length; i++) {
+  const mazasMasyvas = [];
+  for (let j = 0; j < 1; j++) {
+  mazasMasyvas.push(cats[i], (!rand(0, 1) ? 'storas' : 'normalus'));
+}
+bitCats.push(mazasMasyvas);
+  
+}
 console.log(bitCats);
+
 
 // 3. bitCats masyve suskaičiuokite kiek yra storų ir normalių katinukų.
    
@@ -39,26 +44,23 @@ console.log(bitCats);
   }
 }
  
-  console.log('Storu :', sumN);
-  console.log('Normaliu :', sumS);
+  console.log('Storu :', sumS);
+  console.log('Normaliu :', sumN);
 
 
 // 4. Išrūšiuokite gautą bitsCats masyvą pagal antrą katinuko vardo raidę, abėcėlės tvarka (ne pagal 
 //visą vardą, o tik pagal antrą raidę) Tokiu būdu katinukas vardu Rainius pagal antrą “a” raidę turėtų atsidurti viršuje.
 
-
-
-const newcats = bitCats.sort((a, b) => {
-  a1 = a.substring(1, 2);
-  b1 = b.substring(1, 2);
+const newCats = bitCats.sort((a, b) => {
+  a1 = a[0][0].substring(1, 2);
+  b1 = b[1][0].substring(1, 2);
   if (a1 === b1) {
     return 0;
   }
   return a1 > b1 ? 1 : -1;
 });
 
-console.log(bitCats);
-
+console.log(newCats);
 
 
 // 5.  (BOSO lygis) Iš masyvų bitGirls ir bitCats padarykite masyvą happyCats, kurio elementai būtų masyvai iš mergaitės vardo 

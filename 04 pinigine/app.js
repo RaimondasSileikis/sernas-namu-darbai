@@ -160,7 +160,7 @@ console.log('Loterijos bilietu masyvas isrusiuotas nuo didziausio iki maziausio:
 /*
 const newMoney = [];
 let newM = 0;
-while (newM < 20) {
+while (newM < 500) {
   const i = rand(3, 10);
   newMoney.push(i);
   newM += i;
@@ -173,7 +173,7 @@ do {
   const i = rand(3, 10);
   newMoney.push(i);
   newM += i;
-} while (newM <= 20);
+} while (newM <= 500);
 
 console.log('Į piniginės popierinių pinigų skyrelį įdėti 500 pinigų mažom kupiūrom:', newMoney);
 pinigine2.push(...newMoney);
@@ -184,7 +184,7 @@ console.log('Keturiu skyriu Pinigine su papildytais 500 :', newPinigine);
 // 17. Patikrinti ar ką nors laimėjote. Bilieto numerius dalinkite iš 777 ir jeigu numeris išsidalins be liekanos - 
 // jūs laimėjote! Suskaičiuokite, kiek buvo laimingų bilietų.
 
-let countSkyrelis = 0;
+const countSkyrelis = 0;
 for (let i = 0; i < skyrelis.length; i++) {
   if (skyrelis[i] % 777 === 0) {
     countSkyrelis += 1;

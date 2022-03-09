@@ -24,9 +24,13 @@ vat: 21% nuo total
 grandTotal: vat ir total suma
 */
 
-
-
-
+const saskaita = {};
+const number = [];
+for (let i = 0; i < 100; i++) {
+  number.push('INV',[i]);
+  
+}
+console.log(number);
 
 /* Sugeneruotame (ne generavimo metu!) masyve paskaičiuoti ir konsolėje atspausdinti visų sąskaitų grandTotal sumą, produktų sąrašą prie kiekvieno produkto pavadinimo pridedant koks to produkto kiekis yra visose sąskaitose bendrai ir už kokią bendrą sumą.
 
