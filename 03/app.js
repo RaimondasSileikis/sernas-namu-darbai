@@ -70,3 +70,21 @@ console.log(bitCats);
 
 // 5.  (BOSO lygis) Iš masyvų bitGirls ir bitCats padarykite masyvą happyCats, kurio elementai būtų masyvai iš mergaitės vardo 
 // ir katinuko vardo. Nausėdai katinuko neduokit (nes neužteks) ir Nausėdai vietoj katinuko priskirkite stringą “Barsukas”.
+
+const happyCats = [];
+for (let i = 0; i < bitGirls.length; i++) {
+  const vidinisMasyvas = [];
+
+  for (let j = 0; j < 1; j++) {
+    if (bitGirls[i] === 'Nauseda') {
+    vidinisMasyvas.push('Nauseda', 'Barsukas');
+      
+    } else {
+    vidinisMasyvas.push(bitGirls[i], bitCats[i-1][0]);
+    }
+
+  }
+  happyCats.push(vidinisMasyvas);
+};
+
+console.log(happyCats);
