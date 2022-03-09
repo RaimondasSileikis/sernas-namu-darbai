@@ -67,7 +67,7 @@ for (let i = 0; i < pinigine.length; i++) {
   }
   
 }
-console.log(pinigine);
+console.log('Visus masyvo elementus, kurie yra lygūs 0, pakeisti į tų elementų indeksų (vietų, numerių) reikšmes', pinigine);
 
 // 7. Į 1 uždavinio masyvą pridėti tiek naujų reikšmių (pinigų, atsitiktinių skaičių nuo 0 iki 10), kad masyvo ilgis
 // būtų lygiai 30;
@@ -76,7 +76,7 @@ console.log(pinigine);
     pinigine.push(rand(0,10));
   }
 
-console.log(pinigine);
+console.log('Į masyvą pridėti naujų atsitiktiniu reikšmių, masyvo ilgis lygus 30:', pinigine);
 
 // 8. Naudojant 1 uždavinio masyvą iš jo reikšmių sukurti dar du papildomus masyvus. Į vieną iš 1 uždavinio masyvo pridėti
 // reikšmes mažesnes arba lygias 2 (monetas), o į kitą didesnes nei 2 (popierinius pinigus);
@@ -157,7 +157,8 @@ console.log('Loterijos bilietu masyvas isrusiuotas nuo didziausio iki maziausio:
 // 16. Į piniginės popierinių pinigų skyrelį įdėti 500 pinigų mažom kupiūrom ( generuoti atsitiktinius skaičius nuo 3 iki 10
 // ir dėti kaip naujus elementus, kol įdėta suma bus lygi 500);
 
-/*const newMoney = [];
+/*
+const newMoney = [];
 let newM = 0;
 while (newM < 20) {
   const i = rand(3, 10);
@@ -165,24 +166,38 @@ while (newM < 20) {
   newM += i;
 }
 */
+
 const newMoney = [];
 let newM = 0;
 do {
   const i = rand(3, 10);
   newMoney.push(i);
   newM += i;
-} while (newM <= 500);
+} while (newM <= 20);
 
-console.log(newMoney);
+console.log('Į piniginės popierinių pinigų skyrelį įdėti 500 pinigų mažom kupiūrom:', newMoney);
 pinigine2.push(...newMoney);
 
-console.log(pinigine2);
-console.log(newPinigine);
+console.log('Popieriniu pinigu masyvas: ', pinigine2);
+console.log('Keturiu skyriu Pinigine su papildytais 500 :', newPinigine);
+
 // 17. Patikrinti ar ką nors laimėjote. Bilieto numerius dalinkite iš 777 ir jeigu numeris išsidalins be liekanos - 
 // jūs laimėjote! Suskaičiuokite, kiek buvo laimingų bilietų.
 
-
+let countSkyrelis = 0;
+for (let i = 0; i < skyrelis.length; i++) {
+  if (skyrelis[i] % 777 === 0) {
+    countSkyrelis += 1;
+  }
+}
+console.log('Laimingu bilietu yra :', countSkyrelis);
 
 // 18. Sukurkite penktą skyrelį ir į jį sudėkite nuotraukas: ['šuo', 'katė', 'automobilis', 'namas', 'kiemas'] ir jas 
 // išrūšiuokite pagal žodžių ilgį taip, kad pirma eitų trumpiausi žodžiai;
 
+const nuotraukos = ['šuo', 'katė', 'automobilis', 'namas', 'kiemas'];
+nuotraukos.sort((a, b) => a.length - b.length);
+newPinigine.push(nuotraukos);
+
+
+console.log('Penkiu skyriu Pinigine su  isrusiuotom pagal nuotraukos pavadinimo ilgi nuotrauku masyvu:', newPinigine);
