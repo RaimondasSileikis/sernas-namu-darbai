@@ -22,7 +22,7 @@ for (let i = 0; i < 10; i++) {
 //automobilio greitį o visiems ciklams pasibaigus pateikite bendrą visų 10 ratų vidutinį greitį.
 console.log('2 uzduotis');
 
-let ratuGreiciai = [];
+const ratuGreiciai = [];
 for (let i = 0; i < 10; i++) {
     const greitis = rand(120, 220);
     ratuGreiciai.push(greitis);
