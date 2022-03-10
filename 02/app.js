@@ -29,7 +29,7 @@ for (let i = 0; i < 10; i++) {
 }
 const greiciuSum = ratuGreiciai.reduce((a, b) => a + b, 0);
 const vidurkis = greiciuSum / 10;
-console.log('Automobilio Nr.55 10 nuvaziuotu ratu vidutinis greitis', vidurkis, 'km/h');
+console.log('Automobilio Nr.55, 10 nuvaziuotu ratu vidutinis greitis', vidurkis, 'km/h');
 
 //3.Vyksta automobilių žiedinės lenktynės. Automobiliui Nr. 55 liko nuvažiuoti 10 ratų. Jo kuro bake liko 44
 // litrai kuro. Kiekviename rate automobilis sunaudoja atsitiktinį kiekį kuro: nuo 3 iki 6 litrų. Suprogramuokite
