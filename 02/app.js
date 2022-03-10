@@ -13,7 +13,7 @@ function rand(min, max) {           //rand funkcija
 
 for (let i = 0; i < 10; i++) {
    const likoRatu = 10 - i;
-    console.log(likoRatu);
+    console.log('Automobiliui Nr.55 liko nuvaziuoti ratu:',likoRatu);
 }
 
 // 2. Vyksta automobilių žiedinės lenktynės. Automobiliui Nr. 55 liko nuvažiuoti 10 ratų.
@@ -29,7 +29,7 @@ for (let i = 0; i < 10; i++) {
 }
 const greiciuSum = ratuGreiciai.reduce((a, b) => a + b, 0);
 const vidurkis = greiciuSum / 10;
-console.log(vidurkis);
+console.log('Automobilio Nr.55 10 nuvaziuotu ratu vidutinis greitis', vidurkis, 'km/h');
 
 //3.Vyksta automobilių žiedinės lenktynės. Automobiliui Nr. 55 liko nuvažiuoti 10 ratų. Jo kuro bake liko 44
 // litrai kuro. Kiekviename rate automobilis sunaudoja atsitiktinį kiekį kuro: nuo 3 iki 6 litrų. Suprogramuokite
@@ -37,31 +37,39 @@ console.log(vidurkis);
 // užteko kuro įveikti visus 10 ratų. Kurui pasibaigus ciklą nutraukite anksčiau laiko. 
 
 let kuroSum = 0;
+let kk = 0;
 for (let i = 0; i < 10; i++) {
     const kuroSanaudos = rand(3, 6);
-    kuroSum += kuroSanaudos
-     if (kuroSum > 44 & i < 10) {
-        console.log('kuro neuzteko iveikti 10 ratu');
-    } else {
-        console.log('kuro uzteko iveikti 10 ratu');
+    kuroSum += kuroSanaudos;
+    if (44 / kuroSum < 1) {
+        break;
     }
+     kk = kk + 1;
+}
+if (kuroSum <= 44) {
+    console.log('Kuro uzteko. Automobilis Nr.55 nuvaziavo 10 ratu, kuro liko', 44 - kuroSum,'litrai');
+} else {
+    console.log('Kuro neuzteko. Automobilis Nr.55 nuvaziavo', kk, 'ratus su likusiu 44 litru kuro');
 }
 
 // 4. Vyksta automobilių žiedinės lenktynės. Automobiliui Nr. 55 liko nuvažiuoti 10 ratų (žiedų). Kiekviename žiede
 // yra 5 posūkiai, kuriuose automobilio greitis yra atsitiktinis dydis nuo 20 iki 120 km/h. Imituokite tokią situaciją 
 //dviem for ciklais (vienas 10 ratų, kitas 5 posūkiai) ir ciklams pasibaigus atspausdinkite mažiausią automobilio greitį
 // kažkuriame iš posūkių.
-let maxGreiciuMasyvas = [];
+const minGreiciuMasyvas = [];
 for (let i = 0; i < 10; i++) {
-    let greiciuMasyvas = [];
+    const greiciuMasyvas = [];
     for (let i = 0; i < 5; i++) {
         const greitis = rand(20, 120);
         greiciuMasyvas.push(greitis);
     }
-    maxGreitis = Math.min(...greiciuMasyvas);
-    maxGreiciuMasyvas.push(maxGreitis);
+    console.log('Automobilio Nr55',i + 1,'nuvaziuoto rato penkiu posukiu greiciai', greiciuMasyvas);
+    minGreitis = Math.min(...greiciuMasyvas);
+    minGreiciuMasyvas.push(minGreitis);
 }
-console.log(Math.min(...maxGreiciuMasyvas));
+
+console.log('Kiekvieno rato maziausi posukio greiciai:', minGreiciuMasyvas);
+console.log('Automobilio Nr55 maziausias posukio greitis is visu nuvaziuotu ratu:', Math.min(...minGreiciuMasyvas));
 
 //5. (BOSO lygis) Dykumoje vyksta lenktynės. Automobilis Nr. 55 juose dalyvauja. Kiekviename kilometre gali atsitikti arba
 // neatsitikti rand(0, 1) tokie trys įvykiai: netikėtai iššokti - neiišokti ant kelio kengūra, vairuotojas gali nespėti - 
@@ -70,19 +78,20 @@ console.log(Math.min(...maxGreiciuMasyvas));
 //Jeigu viename cikle įvyksta visi nepalankūs įvykiai: iššoka kengūra, vairuotojas nespėja pasukti vairo ir nespėja paspausti
 // stabdžių while ciklą baikite. Ciklo pabaigoje atspausdinkite kiek kilometų sugebėjo nuvažiuoti automobilis be avarijos.
 
-
+console.log('Lenktynese dalyvaujancio Automobilio Nr55 ivykiu seka:');
 let i = 0;
-let result = '';
+let k = 0;
 do {
-  
-   
-    
+   i ++;
     const ivykis1 = rand(0, 1);
     const ivykis2 = rand(0, 1);
     const ivykis3 = rand(0, 1);
-    sumIvykiu = ivykis1 + ivykis2 + ivykis3;
-    
+   
+    if (ivykis1 === 0 && ivykis2 === 0 && ivykis3 === 0) {
+        k ++;
+    }
+    console.log('',i,'kilometre:', !ivykis1 ? 'issoko kengura,' : 'neissoko kengura,', !ivykis2 ? 'nespejo pasukti vairo,' : 'spejo pasukti vairo,', !ivykis3 ? 'nespejo paspausti stabdzio,' : 'spejo paspausti stabdzio,');
      
-} while (sumIvykiu != 0);
-i ++;
-console.log(i);
+} while (k < 1);
+
+console.log('Automobilis Nr.55 be avariju spejo nuvaziuoti',i,'km');
