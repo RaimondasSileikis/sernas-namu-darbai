@@ -17,7 +17,7 @@ for (let i = 0; i < rand(10, 30); i++) {
   pinigine.push(rand(0, 10));
   
 }
-console.log(pinigine);
+console.log('Sukurtas naujas masyvas "pinigine"', '\n',pinigine);
 
 // 2. Naudojant ciklą apskaičiuoti masyvo iš 1 uždavinio reikšmių (pinigų esančių piniginėje) sumą;
 let sum = 0;
