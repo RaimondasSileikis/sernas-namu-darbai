@@ -7,7 +7,9 @@ function rand(min, max) {           //rand funkcija
 }
 
 // Duomenu strukturos
+
 const products = ['Dviratis', 'Triratis', 'Žvakidė', 'Stalas', 'Kėdė', 'Knygų lentyna', 'Paveikslas su rėmu', 'Veidrodis', 'Keturių vietų palapinė', 'Pripučiama valtis', 'Meškerė karosams gaudyti', 'Planšetė', 'Pastatoma lempa', 'Vazonas', 'Baterijų pakrovėjas', 'Pagalvių komplektas', 'Oro drėkintuvas', 'Oro sausintuvas', 'Kavinukas elektrinis', 'Kilimas 2 X 3 metrų', 'Kilimėlis kojoms valyti', 'Užuolaidos', 'Vėjo malūnas', 'Dažai sienoms', 'Dažai luboms', 'Medinė dėžė'];
+console.log('Masyvas "products":', products);
 
 // A. Sukurti 100 sąskaitų masyvą.
 
@@ -22,7 +24,7 @@ const products = ['Dviratis', 'Triratis', 'Žvakidė', 'Stalas', 'Kėdė', 'Knyg
 //total: visų products masyvo elementų total suma
 //vat: 21% nuo total
 //grandTotal: vat ir total suma
-
+console.log('Uzduotis A Sukurti 100 sąskaitų masyvą.');
 const saskaitos = [];
 
 for (let i = 0; i < 100; i++) {
@@ -59,7 +61,8 @@ const sumTotalSk = productMasyvas.reduce((accumulator, item) => {return accumula
 console.log(saskaitos);
 
 
-/* Sugeneruotame (ne generavimo metu!) masyve paskaičiuoti ir konsolėje atspausdinti visų sąskaitų grandTotal sumą, produktų sąrašą prie kiekvieno produkto pavadinimo pridedant koks to produkto kiekis yra visose sąskaitose bendrai ir už kokią bendrą sumą.
+/* B. Sugeneruotame (ne generavimo metu!) masyve paskaičiuoti ir konsolėje atspausdinti visų sąskaitų grandTotal sumą,
+ produktų sąrašą prie kiekvieno produkto pavadinimo pridedant koks to produkto kiekis yra visose sąskaitose bendrai ir už kokią bendrą sumą.
 
 Pvz: 
 Dviratis 35 479.55
@@ -67,3 +70,37 @@ Triratis 10 457.22
 …..
 Medinė dėžė 47 102
 */
+
+  const grandTotalAll = saskaitos.reduce((accumulator, item) => {return accumulator + item.grandTotal}, 0)
+
+  console.log('Visu saskaitu grandTotal suma:', grandTotalAll.toFixed(2));
+  
+ //const titleAll1 = saskaitos.map((item) => {return (item.product).map(({title, amount}) => ({[title]: amount}))}, 0)
+//console.log('title2', titleAll1);
+
+ const titleAll = saskaitos.map((item) => {return item.product}, 0);
+ console.log(titleAll);
+
+const newMasyvas = [];
+ for (let i = 0; i < titleAll.length; i++) {
+    const el1 = titleAll[i];
+     for (let j = 0; j < el1.length; j++) {
+       const el2 = el1[j];
+       delete el2.price;
+       newMasyvas.push(el2);
+     }
+  }
+
+console.log('Naujas masyvas',newMasyvas);
+
+//const reformMasyvas = newMasyvas.map(({title, amount}) => ({[title]: amount}));
+//console.log('jojo',reformMasyvas);
+
+
+
+const all = newMasyvas.reduce( (prev, value) => ({ ...prev, [value.title]: (prev[value.title] || 0) + value.amount }),{});
+  
+console.log(Object.entries(all).map( ([key, value]) => ( {title: key, amount: value, total: value} ) ));
+
+
+console.log(all);                           // NEBAIGTA
