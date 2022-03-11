@@ -27,29 +27,30 @@ const saskaitos = [];
 
 for (let i = 0; i < 100; i++) {
   const productMasyvas = [];
-  let sumTotalSk = 0;
-
+  
 for (let j = 0; j < rand(1, 10); j++) {
-  const priceSk = rand(1, 100).toFixed(2);
+  const titleSk = products[Math.floor(Math.random() * products.length)];
+  const priceSk = +(rand(100, 10000) / 100).toFixed(2);                  // random skaičius su kableliu nuo 1.00 iki 100.00, paliekam skaiciais
   const amountSk = rand(1, 20);
   const totalSk = priceSk * amountSk;
   
-  const productObject = {
-    title : products[Math.floor(Math.random() * products.length)],
-    price : priceSk,
+  const productObject = {                                          // sukuriu objekta "productObject", turinti 4 savybes, kuris bus 
+    title : titleSk,                                               // idetas random(1,10) kartu i "productMasyva", kuris yra objekto "saskaitos" 
+    price : priceSk,                                               // savybe "products", ir bus sukuriamas 100 kartu
     amount : amountSk,
     total : totalSk
   };
 
-  
   productMasyvas.push(productObject);
 
-}
-
-  const saskaita = {
-    number : ('INV' + [i]),
-    product : productMasyvas,
-    total: sumTotalSk               // NEPABAIGTA
+}                                                                                                      // objekto "saskaita" savybe "total", kuria suskaiciuoju,
+const sumTotalSk = productMasyvas.reduce((accumulator, item) => {return accumulator + item.total}, 0); // "productMasyvas" masyve esancio "productObject" 
+  const saskaita = {                                                                                   // objektu savybes "total" reiksmiu suma
+    number : ('INV' + ([i + 1]).toString().padStart(3, '0')), 
+    product : productMasyvas,                                           // sukuriu "saskaita" objekta, turinti 5 savybes, kuris bus
+    total: sumTotalSk,                                                  // sukurtas 100 kartu ir idetas i "saskaitos" masyva
+    vat: sumTotalSk * 0.21,
+    grandTotal: sumTotalSk + (sumTotalSk * 0.21)         
   };
   
   saskaitos.push(saskaita);
