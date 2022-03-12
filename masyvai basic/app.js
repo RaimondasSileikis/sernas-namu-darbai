@@ -1,4 +1,4 @@
-console.log('Masyvai basic 06');
+console.log('Masyvai basic');
 
 function rand(min, max) {           //rand funkcija
     min = Math.ceil(min);
