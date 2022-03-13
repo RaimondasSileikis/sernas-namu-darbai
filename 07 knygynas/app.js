@@ -52,14 +52,14 @@ const container = document.querySelector('.container');
 container.appendChild(h1);
 container.appendChild(div);
 
-
-  fetch('https://in3.dev/knygos/types/') // GET metodas uzklausa
+const book = document.getElementById(dataN.id);
+  fetch('https://in3.dev/knygos/') // GET metodas uzklausa
   .then(response => response.json())      // then yra laukimas atsakymo
   .then(data => {                         // then kol bus apdorotas atsakymas
     console.log('--------2', data)
   // kodas
   
-  const book = document.getElementById(dataN.id);
+  //const book = document.getElementById(dataN.id);
   
   //let rows1 = '';
   
@@ -147,14 +147,29 @@ btnRemove.addEventListener('click', () => {
   localStorage.setItem('color' + dataNN.id, 'grey');
 });
 
-      }
-    
-  }
+      } else {
+        const divBook2 = document.createElement('div');
+        divBook2.setAttribute('class', 'book2');
+        
+        const img2 = document.createElement('img');
+        img2.setAttribute('src','./sold-out.png' );
+        img2.setAttribute('alt', 'sold out');
+        divBook2.appendChild(img2);
+
+        const h22 = document.createElement('h2');
+        const textH22 = document.createTextNode('Išparduota');
+        h22.appendChild(textH22);
+        divBook2.appendChild(h22);
   
+        book.appendChild(divBook2);
+      }
+
+  }
+ 
   //book.innerHTML = rows1;
   
   });       
-
+  
 }
 
 //main.innerHTML = rows;
