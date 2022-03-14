@@ -58,7 +58,7 @@ const sumTotalSk = productMasyvas.reduce((accumulator, item) => {return accumula
   saskaitos.push(saskaita);
 }
 
-console.log(saskaitos);
+console.log('Sukurtas 100 saskaitu masyvas:', saskaitos);
 
 
 /* B. Sugeneruotame (ne generavimo metu!) masyve paskaičiuoti ir konsolėje atspausdinti visų sąskaitų grandTotal sumą,
@@ -70,16 +70,13 @@ Triratis 10 457.22
 …..
 Medinė dėžė 47 102
 */
-
+console.log('Uzduotis B. paskaičiuoti visų sąskaitų grandTotal sumą ir pateiktiproduktų sąrašą prie kiekvieno produkto pavadinimo pridedant koks to produkto kiekis yra visose sąskaitose bendrai ir už kokią bendrą sumą.');
   const grandTotalAll = saskaitos.reduce((accumulator, item) => {return accumulator + item.grandTotal}, 0)
 
   console.log('Visu saskaitu grandTotal suma:', grandTotalAll.toFixed(2));
   
- //const titleAll1 = saskaitos.map((item) => {return (item.product).map(({title, amount}) => ({[title]: amount}))}, 0)
-//console.log('title2', titleAll1);
-
  const titleAll = saskaitos.map((item) => {return item.product}, 0);
- console.log(titleAll);
+ console.log('Masyvai is "Product"',titleAll);
 
 const newMasyvas = [];
  for (let i = 0; i < titleAll.length; i++) {
@@ -96,11 +93,24 @@ console.log('Naujas masyvas',newMasyvas);
 //const reformMasyvas = newMasyvas.map(({title, amount}) => ({[title]: amount}));
 //console.log('jojo',reformMasyvas);
 
+//const all = newMasyvas.reduce( (prev, value) => ({ ...prev, [value.title]: (prev[value.title] || 0) + value.amount }),{});
+//console.log(Object.entries(all).map( ([key, value,]) => ( {title: key, amount: value} ) ));
+//console.log(all);                           
 
 
-const all = newMasyvas.reduce( (prev, value) => ({ ...prev, [value.title]: (prev[value.title] || 0) + value.amount }),{});
-  
-console.log(Object.entries(all).map( ([key, value]) => ( {title: key, amount: value, total: value} ) ));
+let result = newMasyvas.reduce((aac, {title, amount, total}) => {
+  let idx = aac.findIndex(n => n.title === title);
+  if (idx != -1) {
+    aac[idx].amount += amount;
+    aac[idx].total += total;
+    return aac
+  }
+  aac.push({title, amount, total})
+  return aac
 
+}, []);
 
-console.log(all);                           // NEBAIGTA
+console.log('Produktu sarasas:');
+for (let i = 0; i < result.length; i++) {
+  console.log(result[i].title, result[i].amount, result[i].total.toFixed(2));
+};
