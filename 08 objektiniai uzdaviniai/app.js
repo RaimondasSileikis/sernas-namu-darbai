@@ -20,33 +20,61 @@ class Kibiras1 {
     this.akmenuKiekis = 0;
   }
 prideti1Akmeni() {
-this.akmenuKiekis ++ 
+this.akmenuKiekis ++;
 }
 pridetiDaugAkmenu(kiekis) {
 this.akmenuKiekis += kiekis;
 }
 kiekPririnktaAkmenu() {
 
-console.log('Pririnkta akmenu', this.akmenuKiekis);
+console.table(`Pririnkta akmenu ${this.akmenuKiekis} `);
 }
 
 }
  const kibiras = new Kibiras1();
 
 kibiras.prideti1Akmeni();
-console.log(kibiras);
+kibiras.kiekPririnktaAkmenu();
 
 kibiras.pridetiDaugAkmenu(5);
 kibiras.pridetiDaugAkmenu(10);
-console.log(kibiras);
+kibiras.kiekPririnktaAkmenu();
 
-kibiras.kiekPririnktaAkmenu(kibiras);
+kibiras.kiekPririnktaAkmenu();
 
 // 2. Sukurti klasę Pinigine. Konstruktoriuje sukurti dvi savybes popieriniaiPinigai ir metaliniaiPinigai.
 // Parašyti metodą ideti(kiekis), kuris prideda pinigus į piniginę. Jeigu kiekis nedidesnis už 2, tai prideda
 // prie metaliniaiPinigai, jeigu kitaip- prie popieriniaiPinigai. Parašykite metodą skaiciuoti(), kuris
 // suskaičiuotų ir išvestų į konsolę popieriniaiPinigai ir metaliniaiPinigai sumą. Sukurti klasės objektą ir 
 //pademonstruoti veikimą. Nesvarbu kokios popierinės kupiūros ir metalinės monetos egzistuoja realiame pasaulyje.
+console.log('2 Uzduotis');
+
+class Pinigine {
+  constructor() {
+    this.popieriniaiPinigai = 0;
+    this.metaliniaiPinigai = 0;
+
+  }
+  ideti(kiekis) {
+if (kiekis <= 2) {
+  this.metaliniaiPinigai += kiekis;
+} else {
+  this.popieriniaiPinigai += kiekis;
+}
+  }
+skaiciuoti() {
+  console.log(`Viso opieriniu pinigu yra: ${this.popieriniaiPinigai} ,Viso metaliniu pinigu yra: ${this.metaliniaiPinigai}`);
+}
+
+}
+
+const pinigineA = new Pinigine();
+
+pinigineA.ideti(10);
+pinigineA.ideti(1);
+pinigineA.ideti(3);
+
+pinigineA.skaiciuoti();
 
 // 3. Sukurti klasę Troleibusas. Konstruktoriuje sukurti savybę keleiviuSkaicius kuri yra lygi 0. Parašyti du metodus:
 // ilipa(keleiviuSkaicius) ir islipa(keleiviuSkaicius). O taip pat parašyti metoda vaziuoja(), kuris į konsolę išvestų
