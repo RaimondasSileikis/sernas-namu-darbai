@@ -47,7 +47,7 @@ kibiras.kiekPririnktaAkmenu();
 // prie metaliniaiPinigai, jeigu kitaip- prie popieriniaiPinigai. Parašykite metodą skaiciuoti(), kuris
 // suskaičiuotų ir išvestų į konsolę popieriniaiPinigai ir metaliniaiPinigai sumą. Sukurti klasės objektą ir 
 //pademonstruoti veikimą. Nesvarbu kokios popierinės kupiūros ir metalinės monetos egzistuoja realiame pasaulyje.
-console.log('2 Uzduotis');
+console.log('2 Uzdavinys');
 
 class Pinigine {
   constructor() {
@@ -79,6 +79,37 @@ pinigineA.skaiciuoti();
 // 3. Sukurti klasę Troleibusas. Konstruktoriuje sukurti savybę keleiviuSkaicius kuri yra lygi 0. Parašyti du metodus:
 // ilipa(keleiviuSkaicius) ir islipa(keleiviuSkaicius). O taip pat parašyti metoda vaziuoja(), kuris į konsolę išvestų
 // troleibusu važiuojančių keleivių skaičių. Atkreipkite dėmesį, kad troleibusu važiuoti neigiamas keleivių skaičius negali.
+console.log('3 Uzdavinys');
+
+class Troleibusas {
+
+  constructor() {
+
+    this.keleiviuSkaicius = 0;
+
+  }
+ilipa(keleiviuSkaicius) {
+this.keleiviuSkaicius += keleiviuSkaicius;
+}
+islipa(keleiviuSkaicius) {
+if (this.keleiviuSkaicius >= keleiviuSkaicius) {
+  this.keleiviuSkaicius -= keleiviuSkaicius;
+} else {
+  this.keleiviuSkaicius = 0;
+}
+}
+vaziuoja() {
+  console.log(`Troleibusu vazuojanciu keleiviu skiacius yra: ${this.keleiviuSkaicius}`);
+}
+
+}
+
+const troleibusas11 = new Troleibusas();
+
+troleibusas11.ilipa(10);
+troleibusas11.islipa(9);
+
+troleibusas11.vaziuoja();
 
 // 4. (STATIC) Sukurti metodą keleiviuSkaiciusVisuoseTroleibusuose(), kuris rodytų bendrą keleivių skaičių visuose
 // Troleibusas objektuose. Bendram kelevių skaičiaus skaičiavimui sukurkite statinį metodą bendrasKeleiviuSkaicius
