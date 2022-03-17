@@ -83,6 +83,8 @@ console.log('3 Uzdavinys');
 
 class Troleibusas {
 
+
+
   constructor() {
 
     this.keleiviuSkaicius = 0;
@@ -105,9 +107,11 @@ vaziuoja() {
 }
 
 const troleibusas11 = new Troleibusas();
+const troleibusas12 = new Troleibusas();
 
 troleibusas11.ilipa(10);
-troleibusas11.islipa(9);
+troleibusas11.islipa(5);
+troleibusas12.ilipa(10);
 
 troleibusas11.vaziuoja();
 
@@ -115,6 +119,58 @@ troleibusas11.vaziuoja();
 // Troleibusas objektuose. Bendram kelevių skaičiaus skaičiavimui sukurkite statinį metodą bendrasKeleiviuSkaicius
 //(keleiviuSkaicius), kuris pridėtų arba atimtų keleivius iš statinės savybės visiKeleiviai (kurioje yra įrašytas 
 // bendras keleivių skaičius). Taip pat atitinkamai modifikuokite metodus ilipa(keleiviuSkaicius) ir islipa(keleiviuSkaicius).
+console.log('4 uzdavinys');
+
+class Troleibusas1 {
+
+static visiKeleiviai = 0;
+  
+static bendrasKeleiviuSkaicius(keleiviuSkaicius) {
+  return new this(keleiviuSkaicius);  
+}
+
+static keleiviuSkaiciusVisuoseTroleibusuose() {
+console.log('Bendras keleiviu skaicius visuose troleibusuose', this.visiKeleiviai);
+
+}
+  constructor() {
+
+    this.keleiviuSkaicius = 0;
+
+  }
+ilipa(keleiviuSkaicius) {
+this.keleiviuSkaicius += keleiviuSkaicius;
+this.constructor.visiKeleiviai += keleiviuSkaicius;
+}
+islipa(keleiviuSkaicius) {
+if (this.keleiviuSkaicius >= keleiviuSkaicius) {
+  this.keleiviuSkaicius -= keleiviuSkaicius;
+  this.constructor.visiKeleiviai -= keleiviuSkaicius;
+} else {
+  this.keleiviuSkaicius = 0;
+}
+}
+vaziuoja() {
+  console.log(`Troleibusu vazuojanciu keleiviu skiacius yra: ${this.keleiviuSkaicius}`);
+}
+
+}
+
+const troleibusas21 = new Troleibusas1();
+const troleibusas22 = new Troleibusas1();
+
+troleibusas21.ilipa(10);
+troleibusas21.islipa(5);
+troleibusas22.ilipa(10);
+troleibusas22.ilipa(10);
+troleibusas21.islipa(5);
+
+
+troleibusas21.vaziuoja();
+
+
+
+Troleibusas1.keleiviuSkaiciusVisuoseTroleibusuose();
 
 // 5. (MAP) Sukurti klasę PirkiniuKrepselis. Konstruktoriuje sukurti savybę turinys, kuri yra Map tipo objektas. Sukurti
 // tris metodus: idetiSureli(kiekis), idetiPieno(kiekis), idetiDuonos(kiekis). Parašyti metodą krepselioTurinys(), kuris
