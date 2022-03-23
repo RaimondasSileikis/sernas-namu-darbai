@@ -309,8 +309,48 @@ Kibiras2.akmenuSkaiciusVisuoseKibiruose();
 // per stalo viršų.  Sukurti metodą stiklinejeYra(), kuris į konsolę atspausdintų kiek stiklinėje yra skysčio. Sukurti tris
 // stiklinės objektus su tūriais: 200, 150, 100. Didžiausią pripilti pilną ir tada ją ispilti į mažesnę stiklinę, o mažesnę 
 //į dar mažesnę.
+console.log('8 uzdavinys');
+
+class Stikline{
+
+  constructor(turis) {
+    this.turis = turis;
+    this.kiekis = 0;
+  }
+ipilti(kiekis) {
+if (kiekis >= this.turis) {
+  this.kiekis = this.turis;
+}
+
+}
+ispilti() {
+   this.kiekis = this.turis;
+   
+}
+
+stiklinejeYra() {
+console.log(`Stiklineje yra kiekis ${this.kiekis}`);
+}
+
+}
+
+const stikline200 = new Stikline(200);
+const stikline150 = new Stikline(150);
+const stikline100 = new Stikline(100);
+
+stikline200.ipilti(200);
+stikline200.ispilti();
+stikline200.ipilti(200);
+stikline200.stiklinejeYra()
+
+//stikline200.ipilti(200);
+stikline150.ispilti(200)
+stikline100.ispilti(150)
 
 
+stikline200.stiklinejeYra();
+stikline150.stiklinejeYra();
+stikline100.stiklinejeYra();
 
 // 9. Sukurti klasę Grybas. Sukurti klasę Krepsys. Krepsys turi savybę dydis,kuriai konstruktoriuje yra priskiriama reikšmė
 // 500 ir savybę prikrauta (kuri pradžioje lygi 0). Grybas turi tris savybes, kurios taip pat yra paskaičiuojamos konstruktoriuje:
@@ -318,3 +358,48 @@ Kibiras2.akmenuSkaiciusVisuoseKibiruose();
 // valgomas- true arba false, sukirmijes- true arba false ir svoris- nuo 5 iki 45. Eiti grybauti, t.y. Kurti naujus Grybas objektus,
 // jeigu nesukirmijęs ir valgomas dėti į Krepsi objektą, t.y. Vykdyti deti(grybas) metodą kol bus pririnktas pilnas krepšys
  //nesukirmijusių ir valgomų grybų (gali būti truputį daugiau nei dydis).
+console.log('9 uzdavinys');
+
+class Grybas{
+
+  constructor() {
+
+    this.valgomas = !rand(0, 1);
+    this.sukirmijas = !rand(0, 1);
+    this.svoris = rand(5, 45);
+  }
+  rand(min, max) {           //rand funkcija
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min); 
+}
+}
+
+class Krepsys{
+
+  constructor() {
+
+    this.dydis = 500;
+    this.prikrauta = [];
+  }
+
+deti (grybas) {
+
+    let i = 0;
+while (i < this.dydis) {
+  if ((grybas.valgomas = 'true') && (grybas.sukirmijas = 'false')) {
+   
+  }
+   this.prikrauta.push(grybas);
+    i++;
+}
+
+}
+
+}
+
+const krepsys1 = new Krepsys()
+
+krepsys1.deti(new Grybas())
+
+console.log(krepsys1);
