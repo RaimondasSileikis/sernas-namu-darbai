@@ -272,9 +272,9 @@ this.akmenuKiekis ++;
 this.constructor.visiAkmenys ++;
 
 }
-pridetiDaugAkmenu(kiekis) {
-this.akmenuKiekis += kiekis;
-this.constructor.visiAkmenys += kiekis;
+pridetiDaugAkmenu(akmenuSkaicius) {
+this.akmenuKiekis += akmenuSkaicius;
+this.constructor.visiAkmenys += akmenuSkaicius;
 }
 kiekPririnktaAkmenu() {
 
@@ -364,9 +364,9 @@ class Grybas{
 
   constructor() {
 
-    this.valgomas = !rand(0, 1);
-    this.sukirmijas = !rand(0, 1);
-    this.svoris = rand(5, 45);
+    this.valgomas = !this.rand(0, 1);
+    this.sukirmijas = !this.rand(0, 1);
+    this.svoris = this.rand(5, 45);
   }
   rand(min, max) {           //rand funkcija
     min = Math.ceil(min);
