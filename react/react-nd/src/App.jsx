@@ -1,28 +1,26 @@
 
-
 import './App.css';
-import Zuikis from './Components/Zuikis';
-import Zuikis2 from './Components/Zuikis2';
-import Zuikis3 from './Components/Zuikis3';
-import Zuikis4 from './Components/Zuikis4';
-import Zuikis5 from './Components/Zuikis5';
+import Button1 from './Components/Button1';
+import Button2 from './Components/Button2';
+import Button3 from './Components/Button3';
+import Button4 from './Components/Button4';
+import Button5 from './Components/Button5';
 
 
-
-function App(text, color, text1, text2, colors) {
+function App() {
   return (
     <div className="App">
-     
-    <div>2.1 Uzdavinys</div>
-    <Zuikis></Zuikis>
-    <Zuikis2 text= 'Sveiki !'> </Zuikis2>
-    <Zuikis3 color={1} ></Zuikis3>
-    <Zuikis3 color={2} ></Zuikis3>
-    <Zuikis4 text1='Zuikiu' text2='pulkas'></Zuikis4>
-    <Zuikis5 colors='green' text1='Zuikiu' text2='pulkas'></Zuikis5>
+    <h3>No. 1</h3>
+    <Button1 size="100px"></Button1>
+    <h3>No. 2</h3>
+    <Button2 size="100px"></Button2>
+    <h3>No. 3</h3>
+    <Button3 size="100px"></Button3>
+    <h3>No. 4</h3>
+    <Button4></Button4>
+    <h3>No. 5</h3>
+    <Button5 size="100px"></Button5>
     
-    
-
     </div>
   );
 }
