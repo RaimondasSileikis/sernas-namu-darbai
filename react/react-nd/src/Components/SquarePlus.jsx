@@ -9,12 +9,6 @@ function SquarePlus() {
 const add = () => {
     setSq(items => [items]);
 
-     
-const [btn, setBtn] = useState([]);
-
-const plusbtn = () => {
-    setBtn(items => [...items, ])
-}
 
 }
 
