@@ -40,3 +40,13 @@
     transform: rotate(360deg);
   }
 }
+
+.SQUARE1 {
+  width: 100px;
+  height: 100px;
+  background: blueviolet;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}

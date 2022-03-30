@@ -1,19 +1,31 @@
-/*
-REACT CLASS STATE
-
-*/
-
 
 import './App.css';
-import Field from './Components/Field';
+
+import SquareGreen from './Components/SquareGreen';
+import SquarePlus from './Components/SquarePlus';
+
+
+
 
 
 function App() {
+
+//const M = ['labas', 'Ate'];
+//const [A, B] = M; // dvi atskiros constantos, ne masyvas
+
+//const A =  M[0];
+//const B = M[1];
+
+//console.log(A, B);
   return (
     <div className="App">
-    <div>3.2 Uzdavinys</div>
+    <h3>4.1 Homework HOOK</h3>
     <h3>No. 1</h3>
-    <Field></Field>
+    <SquareGreen></SquareGreen>
+    <h3>No. 2</h3>
+    <SquarePlus></SquarePlus>
+    
+     
     </div>
   );
 }

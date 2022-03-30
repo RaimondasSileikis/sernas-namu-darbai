@@ -25,12 +25,7 @@ render(){
             <button onClick={()=>this.changeVis('uosis')}>uosis</button>
         </div>
        
-        <div style={{
-             display: 'flex',
-             width: '600px',
-             height: '402px',
-             background: 'green',
-            }}>
+        <div style={{display: 'flex',width: '600px',height: '402px',background: 'green',}}>
                 <div style={{
                     display: 'flex',
                     justifyContent: 'center',
