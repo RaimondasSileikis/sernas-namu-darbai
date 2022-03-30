@@ -1,26 +1,26 @@
 
 import { Component } from "react";
-import Tree from "./Tree";
+import Tree1 from "./Tree1";
 
 class Field extends Component{
 
     constructor(props) {
         super();
-        this.state = {vis: []};
+        this.state = {elements: []};
     }
 
-    add(vis){
+    add(a){
         const elementsCopy = [...this.state.elements];
         // elementsCopy.push(Math.floor(Math.random()*16777215).toString(16).padEnd(6, '0'));
-        elementsCopy.push(vis);
+        elementsCopy.push(a);
         this.setState({
-            vis: elementsCopy
+            elements: elementsCopy
           });
     }
 
     reset = () => {
             this.setState({
-            vis: []
+            elements: []
           });
     }
 
@@ -28,9 +28,9 @@ class Field extends Component{
         return (
             <>
             <div>
-                <button onClick={()=>this.add('visibility')}>ąžuolas</button>
-                <button onClick={()=>this.add('visibility')}>beržas</button>
-                <button onClick={this.reset}>uosis</button>
+                <button onClick={()=>this.add('ąžuolas')}>ąžuolas</button>
+                <button onClick={()=>this.add('beržas')}>beržas</button>
+                <button onClick={()=>this.add('uosis')}>uosis</button>
             </div>
            
             <div style={{
@@ -47,7 +47,7 @@ class Field extends Component{
                         height: '400px',
                         border: '1px solid black'
                 }}>
-                <Tree elements={this.state.vis}/>
+                <Tree1 elements={this.state.elements}/>
                     </div>
                     <div style={{
                         display: 'flex',
@@ -57,7 +57,7 @@ class Field extends Component{
                         height: '400px',
                         border: '1px solid black'
                 }}>
-                <Tree elements={this.state.vis}/>
+                <Tree1 elements={this.state.elements}/>
                     </div>
                     <div style={{
                         display: 'flex',
@@ -67,7 +67,7 @@ class Field extends Component{
                         height: '400px',
                         border: '1px solid black'
                 }}>
-                <Tree elements={this.state.vis}/>
+                <Tree1 elements={this.state.elements}/>
                     </div>
             </div>
            

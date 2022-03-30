@@ -5,8 +5,7 @@ REACT CLASS STATE
 
 
 import './App.css';
-import Field1 from './Components/Field1';
-
+import Field from './Components/Field';
 
 
 function App() {
@@ -14,8 +13,7 @@ function App() {
     <div className="App">
     <div>3.2 Uzdavinys</div>
     <h3>No. 1</h3>
-    <Field1></Field1>
-   
+    <Field></Field>
     </div>
   );
 }
