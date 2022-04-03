@@ -2,13 +2,14 @@
 
 
 import { useState } from "react";
+import { v4 as uuidv4 } from 'uuid';
 
-function SquareGreen() {
+function SquareGreen2() {
 
  const [tree, setTree] = useState([
      {vis: 'hidden', name: 'azuolas', className: 'SQUARE1',},
      {vis: 'hidden', name: 'berzas', className: 'SQUARE1',},
-     {vis: 'hidden', name: 'uosis', className: '',},
+     {vis: 'hidden', name: 'uosis', className: 'SQUARE1',},
  ]);
 
 const changeTrees = (i) => {
@@ -27,10 +28,12 @@ console.log(tree);
             {
                 tree.map((t, i) => {
                     return (
-                <div style={{display: 'flex', flexDirection: 'column',alignItems: 'center', width: '150px',height: '302px',background: 'green', borderTop:'none', border: '1px solid black'}}>
-                <button style={{marginTop:'-30px'}} onClick={() => {changeTrees(i)}}>{t.name}</button>
+                <div key={uuidv4()} style={{display: 'flex', flexDirection: 'column',alignItems: 'center', width: '150px',height: '302px',background: 'green', borderTop:'none', border: '1px solid black'}}>
+                
+                <button style={{marginTop:'-30px'}} onClick={() => {changeTrees(i)}} >{t.name}</button>
+                
                 <div style={{display:'flex', justifyContent:'flex-start', padding:'40px'}} ></div>
-                <div style={{visibility: t.vis}} className={t.className} key={i} >{t.name}</div>
+                <div style={{visibility: t.vis}} className={t.className} >{t.name}</div>
                 </div>
                     )
                  } )
@@ -39,4 +42,4 @@ console.log(tree);
         </>
     )
 }
-export default SquareGreen;
+export default SquareGreen2;
