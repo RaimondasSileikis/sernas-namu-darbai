@@ -7,7 +7,7 @@ import SquarePlus1 from './Components/SquarePlus1';
 import SquarePlusInside from './Components/SquarePlusInside';
 import Form1 from './Components/Form1';
 import Rand from './Components/Rand';
-
+import Form2 from './Components/Form2';
 
 
 
@@ -28,7 +28,8 @@ function App() {
     <h3>5.Homework REACT FORMS</h3>
     <h3>No. 5.1</h3>
     <Form1></Form1>
-    
+    <h3>No. 5.2</h3>
+    <Form2></Form2>
     
     
     </div>
