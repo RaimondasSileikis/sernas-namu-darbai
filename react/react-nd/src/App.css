@@ -50,3 +50,71 @@
   align-items: center;
 
 }
+
+
+.SQUARE50 {
+  width: 50px;
+  height: 50px;
+  background: blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+  gap:5px;
+  margin:5px;
+
+}
+.SQUARE100 {
+  width: 100px;
+  height: 100px;
+  background:greenyellow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin:5px;
+}
+.SQUARE500 {
+  width: 500px;
+  height: 500px;
+  background: gray;
+  display:flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 5px;
+  padding: 5px;
+  margin:5px;
+}
+
+.SQUARE800 {
+  width: 800px;
+  height: 800px;
+  background:green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin:5px;
+}
+
+.CIRCLE {
+  display: 'grid';
+  align-content: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: purple;
+}
+.TRIANGLE {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  width: 0;
+  height: 0;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-bottom: 60px solid purple;
+
+}
