@@ -1,5 +1,14 @@
 console.log('Tarpinis žinių patikrinimas 01');
 
+
+const tortukas = new Tortas();
+for (const property in tortukas) {
+console.log(`${property}: ${tortukas[property]}`);
+}
+
+
+
+
 function rand(min, max) {           //rand funkcija
     min = Math.ceil(min);
     max = Math.floor(max);
